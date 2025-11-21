@@ -1,3 +1,14 @@
 spring:
   application:
     name: spring-data-naming-case-bug
+
+  jpa:
+    properties:
+      hibernate:
+        globally_quoted_identifiers: true
+
+logging:
+  level:
+    org:
+      hibernate:
+        SQL: DEBUG

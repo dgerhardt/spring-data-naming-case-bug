@@ -1,0 +1,21 @@
+databaseChangeLog:
+  - objectQuotingStrategy: QUOTE_ALL_OBJECTS
+  - preConditions:
+      - runningAs:
+          username: demo
+  - changeSet:
+      id: 1
+      author: dgerhardt
+      labels: table
+      context: default
+      comment: Create initial database tables
+      changes:
+        - createTable:
+            tableName: demo_entity
+            columns:
+              - column:
+                  name: demo_id
+                  type: uuid
+                  constraints:
+                    primaryKey: true
+                    nullable: false
